@@ -1,0 +1,214 @@
+/* .home-container {
+  min-height: calc(100vh - 80px);
+} */
+.loader-container,
+.failure-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding: 15px;
+  min-height: calc(100vh - 80px);
+  text-align: center;
+}
+.failure-img {
+  width: 100%;
+  max-width: 300px;
+}
+.failure-head {
+  font-size: 18px;
+  color: #333;
+  font-weight: 500;
+  margin: 5px auto;
+}
+.failure-para {
+  font-size: 14px;
+  color: gray;
+  margin: 5px auto;
+}
+.retry-btn {
+  margin-top: 20px;
+  background-color: #088c03;
+  color: #fff;
+  border: none;
+  font-size: 14px;
+  border-radius: 8px;
+  padding: 10px 25px;
+  cursor: pointer;
+}
+.home-main {
+  width: 100%;
+  min-height: calc(100vh - 80px);
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.aside {
+  padding: 20px;
+  width: 250px;
+  flex-shrink: 0;
+  height: 100%;
+  position: sticky;
+  top: 80px;
+}
+.aside-head {
+  font-weight: 600;
+  font-size: 18px;
+  color: #088c03;
+  width: 87%;
+  margin: 0;
+  margin-left: auto;
+}
+.category-tabs-ul {
+  width: 90%;
+  /* height: 100%; */
+  height: calc(100vh - 80px);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 0 10px;
+  margin-left: auto;
+  overflow: auto;
+  padding-bottom: 80px;
+}
+.category-tabs-ul::-webkit-scrollbar {
+  width: 5px;
+}
+.category-tabs-ul::-webkit-scrollbar-thumb {
+  width: 5px;
+  background-color: #088c03;
+  padding: 5px;
+  border-radius: 8px;
+}
+.category-tabs-ul::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.categories-tabs-nav {
+  width: 100%;
+  display: none;
+}
+.tab-li {
+  list-style-type: none;
+  width: 100%;
+}
+.tab-btn {
+  width: 100%;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+  border-radius: 6px;
+  padding: 10px;
+  transition: all 0.2s 0s ease-in-out;
+}
+.tab-btn:hover:not(.active-tab) {
+  color: #088c03;
+  transform: scale(1.02);
+}
+
+.active-tab {
+  background-color: #088c03;
+  color: #fff;
+}
+.products-content-container {
+  min-width: calc(100vw - 250px);
+  min-height: calc(100vh - 80px);
+  overflow-y: auto;
+  padding: 15px 5px;
+  scrollbar-width: 0px;
+}
+.products-content-container::-webkit-scrollbar {
+  width: 5px;
+}
+.products-content-container::-webkit-scrollbar-thumb {
+  width: 5px;
+  background-color: orange;
+  padding: 5px;
+  border-radius: 5px;
+}
+.products-content-container::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+@media screen and (max-width: 767px) {
+  .products-content-container,
+  .home-main {
+    height: calc(100vh - 50px);
+    padding-inline: 0;
+  }
+  .home-main {
+    flex-direction: column;
+    gap: 0;
+  }
+  .aside {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    top: 0;
+    background-color: white;
+    /* border-bottom: 1px solid #ccc; */
+  }
+  .aside-head {
+    display: none;
+    visibility: hidden;
+  }
+  .category-tabs-ul {
+    display: none;
+    visibility: hidden;
+  }
+  .categories-tabs-nav {
+    display: flex;
+  }
+  .category-tabs-mobile-ul {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2px;
+    margin: 0;
+    padding: 5px 15px 5px 10px;
+    overflow-x: auto;
+    scrollbar-width: 0px;
+  }
+  .category-tabs-mobile-ul::-webkit-scrollbar {
+    width: 2px;
+    height: 5px;
+  }
+
+  .category-tabs-mobile-ul::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  .category-tabs-mobile-ul::-webkit-scrollbar-thumb {
+    background-color: #088c03;
+    border-radius: 8px;
+    padding: 2px;
+  }
+  .mobile-tab-li {
+    list-style-type: none;
+    width: auto;
+    flex-shrink: 0;
+  }
+  .tab-btn {
+    width: 100%;
+    max-width: 120px;
+    min-width: 50px;
+    text-align: center;
+    margin: 0;
+  }
+  .tab-btn:not(.active-tab) {
+    color: gray;
+    font-weight: 500;
+  }
+}

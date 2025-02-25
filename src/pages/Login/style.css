@@ -1,0 +1,119 @@
+.login-container {
+  width: 100%;
+  min-height: 100vh;
+  background-image: url('https://res.cloudinary.com/dfjb7xrjo/image/upload/v1738510219/Das-NxtMart/Bg-desktop_mbt3b9.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  object-position: center center;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  background-color: #fff;
+  padding: 10px;
+  padding-top: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* gap: 5px; */
+}
+.login-logo {
+  width: 100%;
+  max-width: 100px;
+  margin: 10px auto;
+}
+form {
+  width: 85%;
+  max-width: 100%;
+  margin: 10px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.input-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5px;
+}
+.login-card label {
+  width: 100%;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 500;
+  color: #555;
+}
+.login-card .input {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5px;
+  border: 1px solid #555;
+  border-radius: 5px;
+}
+.login-icons {
+  width: 25px;
+  margin-left: 5px;
+}
+.login-card input[type='text'],
+input[type='password'] {
+  width: 100%;
+  border-radius: 5px;
+  height: 35px;
+  border: none;
+  outline: none;
+  font-size: 12px;
+  font-weight: 500;
+  color: #000;
+}
+.login-card .input-box:nth-child(3) {
+  flex-direction: row;
+  gap: 5px;
+}
+.login-card .input[type='checkbox'] {
+  width: 20px;
+}
+.login-card label:last-child {
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+}
+.login-btn {
+  width: 100%;
+  background-color: green;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 5px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 14px;
+}
+.errormsg-para {
+  width: 100%;
+  margin: 0;
+  margin-top: -12px;
+  height: 20px;
+  padding: 0;
+  text-align: left;
+  color: red;
+  font-weight: 400;
+  font-size: 12px;
+}
+@media screen and (max-width: 767px) {
+  .login-container {
+    background-image: url('https://res.cloudinary.com/dfjb7xrjo/image/upload/v1738510219/Das-NxtMart/Bg-mobile_xkxjg8.png');
+  }
+}
