@@ -46,9 +46,7 @@
   right: 0;
   z-index: -1;
   background: linear-gradient(to top, #088c03, transparent 50%);
-  transition:
-    all 0.3s 0s ease-in-out,
-    background 0.5s 0s ease;
+  transition: all 0.3s 0s ease-in-out, background 0.5s 0s ease;
 }
 .social-icons-box > a:hover::after {
   height: 30px;
