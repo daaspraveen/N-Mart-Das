@@ -10,17 +10,18 @@
 }
 .not-found-img {
   width: 100%;
-  max-width: 250px;
+  max-width: 350px;
 }
 .not-found-heading {
-  font-size: 28px;
-  font-weight: 600;
-  color: #000;
+  font-size: 24px;
+  font-weight: 500;
+  color: #191919;
   text-align: center;
+  margin: 0;
 }
-not-found-para {
-  font-size: 12px;
+.not-found-para {
+  font-size: 16px;
   font-weight: 400;
-  color: #333;
+  color: #19191980;
   text-align: center;
 }

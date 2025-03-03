@@ -1,107 +1,83 @@
 import Cookies from 'js-cookie'
-import {useContext} from 'react'
 import {Link, withRouter} from 'react-router-dom'
 
 import {BiHomeAlt} from 'react-icons/bi'
 import {PiShoppingCartSimpleLight} from 'react-icons/pi'
 import {HiOutlineLogout} from 'react-icons/hi'
-// import { FaCartShopping } from "react-icons/fa6";
-// import { GiFruitBowl } from "react-icons/gi";
 
-import ContextDetails from '../../context'
 import './style.css'
 
 const Header = props => {
-  const {updateUserName} = useContext(ContextDetails)
   const {history} = props
   const path = history.location.pathname
   const pathId = path.split('/').pop()
 
   const doLogout = () => {
     Cookies.remove('jwt_token')
-    updateUserName('')
+    localStorage.removeItem('ecomData')
+    localStorage.removeItem('cartData')
+    localStorage.removeItem('localCategoryTabsList')
     history.replace('/')
   }
 
+  const screenWidth = window.innerWidth
+  // console.log('screenWidth : ', screenWidth)
+
   return (
     <header className="header">
-      <nav className="header-nav">
-        <Link to="/">
-          <img
-            src="https://res.cloudinary.com/dfjb7xrjo/image/upload/v1738510223/Das-NxtMart/Logo_2_rtxtbu.png"
-            alt="website logo"
-            className="header-logo"
-          />
+      <Link to="/" className="logo-link">
+        <img
+          src="https://res.cloudinary.com/dfjb7xrjo/image/upload/v1738510223/Das-NxtMart/Logo_2_rtxtbu.png"
+          alt="website logo"
+          className="header-logo"
+        />
+      </Link>
+      <nav className="header-nav desktop-menus-ulbox">
+        <Link
+          to="/"
+          className={`desktop-menu-link mobile-nav-link ${
+            pathId === '' ? 'active-menuTab' : ''
+          }`}
+        >
+          {screenWidth > 767 ? (
+            'Home'
+          ) : (
+            <BiHomeAlt
+              size={25}
+              className="header-nav-icon"
+              color={pathId === '' ? '#088C03' : 'gray'}
+            />
+          )}
         </Link>
-        <ul className="desktop-menus-ulbox">
-          <li className="desktop-menu-li">
-            <Link
-              to="/"
-              className={`desktop-menu-link ${
-                pathId === '' ? 'active-menuTab' : ''
-              }`}
-            >
-              Home
-            </Link>
-          </li>
-          <li className="desktop-menu-li">
-            <Link
-              to="/cart"
-              className={`desktop-menu-link ${
-                pathId === 'cart' ? 'active-menuTab' : ''
-              }`}
-            >
-              Cart
-            </Link>
-          </li>
-          <li className="desktop-menu-li">
-            <button type="button" className="logout-btn" onClick={doLogout}>
-              <HiOutlineLogout
-                size={25}
-                color="#000"
-                style={{transform: 'scaleX(-1)'}}
-              />
-              Logout
-            </button>
-          </li>
-        </ul>
-      </nav>
-      <nav className="mobile-nav">
-        <button type="button" className="mobile-nav-btn" aria-label="Home">
-          <Link
-            to="/"
-            className={`mobile-nav-link ${
-              pathId === 'cart' ? 'active-menuTab' : ''
-            }`}
-          >
-            <BiHomeAlt size={25} color={pathId === '' ? 'black' : 'gray'} />
-          </Link>
-        </button>
-        <button type="button" className="mobile-nav-btn" aria-label="Cart">
-          <Link
-            to="/cart"
-            className={`mobile-nav-link ${
-              pathId === 'cart' ? 'active-menuTab' : ''
-            }`}
-          >
+        <Link
+          to="/cart"
+          className={`desktop-menu-link mobile-nav-link ${
+            pathId === 'cart' ? 'active-menuTab' : ''
+          }`}
+        >
+          {screenWidth > 767 ? (
+            'Cart'
+          ) : (
             <PiShoppingCartSimpleLight
               size={25}
-              color={pathId === 'cart' ? 'black' : 'gray'}
+              className="header-nav-icon"
+              color={pathId === 'cart' ? '#088C03' : 'gray'}
               style={{strokeWidth: '5px'}}
             />
-          </Link>
-        </button>
+          )}
+        </Link>
         <button
           type="button"
-          className="mobile-nav-btn"
+          className="logout-btn mobile-nav-btn"
           onClick={doLogout}
-          aria-label="Logout"
+          data-testid="logout"
         >
           <HiOutlineLogout
             size={25}
             color="gray"
-            style={{strokeWidth: '1.5px'}}
+            style={screenWidth > 767 && {transform: 'scaleX(-1)'}}
           />
+          {screenWidth > 767 && 'Logout'}
         </button>
       </nav>
     </header>

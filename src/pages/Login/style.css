@@ -52,7 +52,7 @@ form {
   width: 100%;
   text-align: left;
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 400;
   color: #555;
 }
 .login-card .input {
@@ -61,42 +61,60 @@ form {
   justify-content: flex-start;
   align-items: center;
   gap: 5px;
-  border: 1px solid #555;
-  border-radius: 5px;
+  border: 1px solid #64748b;
+  border-radius: 8px;
+  transition: all 0.3s 0s ease-in-out;
+}
+.login-card .input:focus,
+.login-card .input:hover,
+.login-card .input:active {
+  box-shadow: 0 0 5px 0 #64748b;
 }
 .login-icons {
-  width: 25px;
-  margin-left: 5px;
+  width: 16px;
+  margin-left: 8px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
 }
 .login-card input[type='text'],
-input[type='password'] {
+.login-card input[type='password'] {
   width: 100%;
-  border-radius: 5px;
+  border-radius: 0 8px 8px 0;
   height: 35px;
   border: none;
+  font-size: 14px;
+  font-weight: 400;
+  color: #333;
+  letter-spacing: 0.15em;
+  padding: 0px 10px;
   outline: none;
-  font-size: 12px;
-  font-weight: 500;
-  color: #000;
+  background-color: transparent !important;
+}
+.login-card input[type='password'] {
+  font-family: password;
 }
 .login-card .input-box:nth-child(3) {
   flex-direction: row;
-  gap: 5px;
+  gap: 1px;
 }
-.login-card .input[type='checkbox'] {
-  width: 20px;
+.login-card input[type='checkbox'] {
+  width: 16px;
+  border-radius: 2px;
+  accent-color: #088c03;
+  transform: scale(1.2);
+  cursor: pointer;
 }
 .login-card label:last-child {
   cursor: pointer;
-  font-size: 12px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 400;
 }
 .login-btn {
   width: 100%;
-  background-color: green;
+  background-color: #088c03;
   border: none;
-  border-radius: 5px;
-  padding: 12px 5px;
+  border-radius: 8px;
+  padding: 12px 24px;
   color: #fff;
   font-weight: 500;
   font-size: 14px;
@@ -108,12 +126,21 @@ input[type='password'] {
   height: 20px;
   padding: 0;
   text-align: left;
-  color: red;
+  color: #ef4444;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 14px;
 }
 @media screen and (max-width: 767px) {
   .login-container {
     background-image: url('https://res.cloudinary.com/dfjb7xrjo/image/upload/v1738510219/Das-NxtMart/Bg-mobile_xkxjg8.png');
+  }
+  .login-logo {
+    max-width: 80px;
+  }
+  form {
+    width: 95%;
+  }
+  .login-card {
+    width: 95%;
   }
 }

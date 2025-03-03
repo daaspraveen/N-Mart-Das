@@ -1,0 +1,49 @@
+.payment-container {
+  width: 100%;
+  min-height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  text-align: center;
+  gap: 10px;
+}
+.payment-logo {
+  width: 100%;
+  max-width: 60px;
+  height: 100%;
+  object-fit: contain;
+}
+.payment-head {
+  font-size: 20px;
+  font-weight: 500;
+  color: #191919;
+  letter-spacing: 0.1px;
+  margin: 0;
+}
+.payment-para {
+  font-size: 14px;
+  font-weight: 400;
+  color: #19191980;
+  margin: 3px 0;
+  line-height: 3px;
+}
+.payment-btn {
+  border: none;
+  width: 200px;
+  /* outline: none; */
+  padding: 12px 24px;
+  background-color: #088c03;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 15px 0;
+  transition: all 0.2s 0s ease-in-out;
+}
+.payment-btn:hover {
+  box-shadow: 0 0 5px 0 #088c03;
+}

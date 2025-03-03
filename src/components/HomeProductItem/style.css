@@ -65,22 +65,23 @@
   justify-content: center;
   align-items: center;
   gap: 10px;
-  padding: 5px;
-  border-radius: 3px;
-  background-color: green;
+  border-radius: 5px;
+  /* background-color: #088c03; */
+  border: 2px solid #088c03;
   outline: none;
-  color: #fff;
+  color: #088c03;
+  padding: 0 2px;
 }
 .added-btn {
   width: 15px;
-  padding: 0;
+  padding: 5px;
   margin: 0;
   cursor: pointer;
   background-color: transparent;
   font-size: 16px;
   font-weight: 500;
   border: none;
-  color: #fff;
+  color: #088c03;
 }
 .added-btn:nth-child(2) {
   font-size: 14px;
@@ -88,17 +89,19 @@
 .added-span {
   font-size: 12px;
   font-weight: 400;
+  margin: 0;
+  padding: 0;
 }
 .add-prod-btn {
   width: 60px;
   background-color: transparent;
-  border: 2px solid green;
-  color: green;
+  color: #088c03;
   border-radius: 5px;
-  padding: 5px 8px;
   font-size: 12px;
   font-weight: 500;
   cursor: pointer;
+  border: none;
+  padding: 5px;
 }
 @media screen and (max-width: 767px) {
   .product-card {

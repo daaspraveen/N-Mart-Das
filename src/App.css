@@ -15,4 +15,5 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-family: Roboto;
   width: 100%;
+  background-color: #fff;
 }

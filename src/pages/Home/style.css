@@ -1,8 +1,11 @@
-/* .home-container {
+.home-main {
+  width: 100%;
   min-height: calc(100vh - 80px);
-} */
-.loader-container,
-.failure-container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.loader-container {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -13,38 +16,63 @@
   min-height: calc(100vh - 80px);
   text-align: center;
 }
+/* Failure */
+.failure-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding: 15px;
+  min-height: calc(100vh - 80px);
+  text-align: center;
+  letter-spacing: 0.1px;
+}
 .failure-img {
   width: 100%;
-  max-width: 300px;
+  max-width: 450px;
+  padding: 0 20px;
 }
 .failure-head {
-  font-size: 18px;
-  color: #333;
+  font-size: 24px;
+  color: #191919;
   font-weight: 500;
-  margin: 5px auto;
+  margin: 10px auto;
 }
 .failure-para {
   font-size: 14px;
-  color: gray;
+  color: #191919cc;
   margin: 5px auto;
 }
 .retry-btn {
+  width: 95px;
   margin-top: 20px;
   background-color: #088c03;
   color: #fff;
   border: none;
   font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.2px;
   border-radius: 8px;
-  padding: 10px 25px;
+  padding: 12px 24px;
   cursor: pointer;
+  transition: all 0.2s 0s ease-in-out;
 }
-.home-main {
-  width: 100%;
-  min-height: calc(100vh - 80px);
-  display: flex;
-  justify-content: center;
-  position: relative;
+.retry-btn:hover {
+  box-shadow: 0 0 5px 0 #088c03;
 }
+
+@media screen and (max-width: 767px) {
+  .failure-head {
+    font-size: 20px;
+  }
+  .failure-para {
+    font-size: 14px;
+  }
+}
+
+/* Aside  */
 .aside {
   padding: 20px;
   width: 250px;
@@ -52,6 +80,7 @@
   height: 100%;
   position: sticky;
   top: 80px;
+  z-index: 99;
 }
 .aside-head {
   font-weight: 600;

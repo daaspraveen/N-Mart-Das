@@ -1,25 +1,31 @@
 .header {
   width: 100%;
+  padding: 0 30px;
   height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f7f7f7;
+  /* background-color: #d8d8d833; */
+  background-color: #fff;
   position: sticky;
   top: 0;
   z-index: 10;
 }
 .header-nav {
-  width: 90%;
+  margin-left: auto;
   display: flex;
   justify-content: space-between;
   gap: 10px;
+}
+.logo-link {
+  width: auto;
 }
 .header-logo {
   width: 100%;
   min-width: 40px;
   max-width: 70px;
   object-fit: contain;
+  /* margin-left: 20px; */
 }
 .desktop-menus-ulbox {
   display: flex;
@@ -29,25 +35,25 @@
   align-items: center;
   padding: 0;
   margin: 0;
-}
-.desktop-menu-li {
-  list-style-type: none;
+  margin-left: auto;
 }
 .desktop-menu-link {
   text-decoration: none;
-  color: #000;
+  color: #333;
   border-bottom: 3px solid transparent;
   transition: all 0.3s 0s ease-in-out;
   position: relative;
   overflow: hidden;
   padding-bottom: 5px;
+  font-size: 16px;
+  font-weight: 400;
 }
 .desktop-menu-link:hover {
-  color: green;
+  color: #088c03;
 }
 .active-menuTab {
-  color: green;
-  border-color: green;
+  color: #088c03;
+  border-color: #088c03;
   font-weight: 500;
 }
 .logout-btn {
@@ -60,14 +66,13 @@
   align-items: center;
   gap: 5px;
   cursor: pointer;
+  color: #333;
+  font-size: 16px;
+  font-weight: 400;
+  /* margin-left: 12px; */
+  margin-bottom: 5px;
 }
 
-.logout-btn:hover {
-  color: red;
-}
-.mobile-nav {
-  display: none;
-}
 @media screen and (max-width: 767px) {
   .header {
     position: fixed;
@@ -77,19 +82,26 @@
     top: unset;
     height: 50px;
     padding: 5px 0px;
-    /* border-top: 2px solid lightgray; */
     /* background-color: unset; */
+    border-radius: 20px 20px 0 0;
+    background-color: #fff;
+    border: 1px solid #d1d5db;
+    box-shadow: 0px 7px 32px 0px #0000000d;
   }
   .header-nav {
-    display: none;
-  }
-  .mobile-nav {
     width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap: 5px;
-    padding: 3px 0;
+  }
+  .logo-link {
+    display: none;
+    visibility: hidden;
+  }
+  .desktop-menus-ulbox {
+    width: 100%;
+  }
+  .desktop-menu-link{
+    border: none;
+    width: 33%;
+    text-align: center;
   }
   .mobile-nav-btn {
     background-color: #fff;
@@ -98,6 +110,7 @@
     margin: 0;
     cursor: pointer;
     width: 33.33%;
+    text-align: center;
   }
   .mobile-nav-btn:last-child {
     transform: scaleX(-1);
